@@ -1,0 +1,78 @@
+@import '../../css/mixins.scss';
+@import '../../css/variables.scss';
+
+.main-header {
+  padding-bottom: 261px;
+  width: 100%;
+  background:
+  url('../../img/main-header/header-guitar.png') no-repeat right -70px bottom 0,
+  url('../../img/main-header/header-lines.svg') no-repeat center bottom 162px/100% 74px,
+  linear-gradient(to top, transparent 261px, rgba(30, 9, 6, 0.15) 250px, rgba(30, 9, 6, 0.15) 100%);
+}
+
+.main-header__navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: normal;
+
+  min-height: 110px;
+}
+
+.main-header__logo,
+.main-header__main-menu-link,
+.main-header__user-menu-link {
+  @include reset-link;
+}
+
+.main-header__logo-image {
+  display: block;
+}
+
+.main-header__main-menu,
+.main-header__user-menu {
+  @include reset-list;
+}
+
+.main-header__main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+
+  margin-left: 12.17%;
+  margin-right: 20px;
+
+  font-size: 14px;
+  line-height: 20px;
+  color: $basic-text-color;
+  letter-spacing: 0.07em;
+}
+
+.main-header__user-menu {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  justify-self: flex-end;
+
+  margin-left: auto;
+}
+
+.main-header__user-menu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: 40px;
+}
+.main-header__user-menu-icon {
+  display: block;
+}
+
+.main-header__products-count {
+  top: -0.4em;
+  font-size: 10px;
+  line-height: 12px;
+  color:rgba(242, 5, 5, 1);
+}
