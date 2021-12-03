@@ -1,0 +1,37 @@
+@import '../../css/mixins.scss';
+@import '../../css/variables.scss';
+
+$bg-color: rgba(63, 63, 63, 1);
+
+.main-footer {
+  font-family: $basic-font;
+  font-weight: normal;
+  color: $alternative-text-color;
+
+  padding: 157px 0 63px;
+  box-sizing: border-box;
+  background:
+  linear-gradient(to bottom, transparent 63px, $bg-color 63px, $bg-color 69px, transparent 69px, transparent 79px, $bg-color 79px),
+  url('../../img/main-footer/footer-guitar.png') no-repeat left -65px top -6px;
+}
+
+.main-footer__grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 1fr auto;
+  column-gap: 91px;
+}
+
+.main-footer__logo {
+  align-self: start;
+  transform: translateY(-17px)
+}
+
+.main-footer__social {
+  transform: translate(1px, 5px)
+}
+
+.main-footer__menu {
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+}

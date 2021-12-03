@@ -1,0 +1,9 @@
+@import '../../../css/mixins.scss';
+@import '../../../css/variables.scss';
+
+.social {
+  @include reset-list;
+
+  display: flex;
+  column-gap: 22px;
+}
