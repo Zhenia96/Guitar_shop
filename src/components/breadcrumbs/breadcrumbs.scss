@@ -1,0 +1,38 @@
+@import '../../css/mixins.scss';
+@import '../../css/variables.scss';
+
+.breadcrumbs {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 13px;
+
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.023em;
+  color: rgba(71, 71, 71, 1);
+}
+
+.breadcrumbs__item {
+  position: relative;
+  &:not(:first-of-type) {
+    padding-left: 24px;
+
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 12px;
+      height: 7px;
+      content: '';
+      background:url('../../img/breadcrumbs/icons/arrow.svg') no-repeat;
+    }
+  }
+}
+
+.breadcrumbs__link {
+  @include reset-link
+}
