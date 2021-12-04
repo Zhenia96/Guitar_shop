@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MainMenu from './main-menu/main-menu';
+import { page } from '../../constants';
 import LogoImage from '../../img/main-header/logo-black.svg';
 import LocationIcon from '../../img/main-header/icons/location-icon.svg';
 import SearchIcon from '../../img/main-header/icons/search-icon.svg';
 import BasketIcon from '../../img/main-header/icons/basket-icon.svg';
 import './main-header.scss';
-import { page } from '../../constants';
 
 const MainHeader = () => (
   <header className='main-header'>
@@ -13,12 +14,7 @@ const MainHeader = () => (
       <a className='main-header__logo' href='/#'>
         <img className='main-header__logo-image' src={LogoImage} alt='Логотип Guitar shop' width='67' height='70' />
       </a>
-      <ul className='main-header__main-menu'>
-        <li><Link className='main-header__main-menu-link' to={page.catalog.path}>Каталог</Link></li>
-        <li><a className='main-header__main-menu-link' href='/#'>Где купить?</a></li>
-        <li><a className='main-header__main-menu-link' href='/#'>О компании</a></li>
-        <li><a className='main-header__main-menu-link' href='/#'>Cервис-центры</a></li>
-      </ul>
+      <MainMenu className='main-header__main-menu' />
       <ul className='main-header__user-menu'>
         <li>
           <a className='main-header__user-menu-link' href='/#'>

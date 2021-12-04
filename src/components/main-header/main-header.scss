@@ -22,7 +22,6 @@
 }
 
 .main-header__logo,
-.main-header__main-menu-link,
 .main-header__user-menu-link {
   @include reset-link;
 }
@@ -31,23 +30,13 @@
   display: block;
 }
 
-.main-header__main-menu,
 .main-header__user-menu {
   @include reset-list;
 }
 
 .main-header__main-menu {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 40px;
-
   margin-left: 12.17%;
   margin-right: 20px;
-
-  font-size: 14px;
-  line-height: 20px;
-  color: $basic-text-color;
-  letter-spacing: 0.07em;
 }
 
 .main-header__user-menu {
