@@ -1,6 +1,8 @@
 @import '../../../css/mixins.scss';
 @import '../../../css/variables.scss';
 
+$on-hover-color: rgba(71, 71, 71, 1);
+
 .main-menu{
   @include reset-list;
 
@@ -16,4 +18,13 @@
 
 .main-menu__link {
   @include reset-link;
+
+  &:hover,
+  &:focus {
+    color: $on-hover-color;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
