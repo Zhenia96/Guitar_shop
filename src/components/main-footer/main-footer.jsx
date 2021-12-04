@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Social from './social/social';
 import Menu from './menu/menu';
 import logo from '../../img/main-footer/logo-white.svg';
 import './main-footer.scss';
 
-const MainFooter = () => (
-  <footer className='main-footer'>
+const MainFooter = ({ className }) => (
+  <footer className={`${className} main-footer`}>
     <div className='wrapper main-footer__grid'>
       <a className='main-footer__logo' href='/#'>
         <img src={logo} alt='Логотип Guitar shop' />
@@ -15,5 +16,13 @@ const MainFooter = () => (
     </div>
   </footer>
 );
+
+MainFooter.propTypes = {
+  className: PropTypes.string,
+};
+
+MainFooter.defaultProps = {
+  className: '',
+};
 
 export default MainFooter;

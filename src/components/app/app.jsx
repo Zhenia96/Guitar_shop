@@ -5,6 +5,7 @@ import MainHeader from '../main-header/main-header';
 import Catalog from '../catalog/catalog';
 import Basket from '../basket/basket';
 import { page } from '../../constants';
+import './app.scss';
 
 const App = () => (
   <div className='page'>
@@ -25,7 +26,7 @@ const App = () => (
         }
       />
     </Routes>
-    <MainFooter />
+    <MainFooter className='page__footer' />
   </div>
 );
 
