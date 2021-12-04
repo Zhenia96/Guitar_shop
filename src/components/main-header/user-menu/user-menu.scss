@@ -1,0 +1,31 @@
+@import '../../../css/mixins.scss';
+@import '../../../css/variables.scss';
+
+.user-menu {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
+.user-menu__link {
+  @include reset-link;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-width: 40px;
+}
+
+.user-menu__icon {
+  display: block;
+}
+
+.user-menu__products-count {
+  top: -0.4em;
+  font-size: 10px;
+  line-height: 12px;
+  color:rgba(242, 5, 5, 1);
+}
