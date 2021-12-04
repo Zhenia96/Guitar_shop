@@ -19,6 +19,7 @@ module.exports = {
   rules: {
     'jsx-quotes': ['error', 'prefer-single'],
     'no-param-reassign': ['error', { props: false }],
+    'import/prefer-default-export': ['off'],
     'react/jsx-props-no-spreading': ['off'],
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'jsx-a11y/no-static-element-interactions': ['off'],
