@@ -1,6 +1,8 @@
 @import '../../../css/mixins.scss';
 @import '../../../css/variables.scss';
 
+$on-hover-color: rgba(71, 71, 71, 1);
+
 .user-menu {
   @include reset-list;
 
@@ -17,10 +19,38 @@
   align-items: center;
   height: 40px;
   min-width: 40px;
+
+  &:active .user-menu__icon {
+    opacity: 0.5;
+  }
+
+  &:focus .user-menu__icon {
+    fill: $on-hover-color;
+  }
+
+  &:focus .user-menu__icon--special {
+    fill: none;
+    stroke: $on-hover-color;
+  }
 }
 
 .user-menu__icon {
   display: block;
+  fill: rgba(0, 0, 0, 1);
+
+  &:hover{
+    fill: $on-hover-color;
+  }
+
+  &--special {
+    fill: none;
+    stroke: rgba(0, 0, 0, 1);
+
+    &:hover{
+      fill: none;
+      stroke: $on-hover-color;
+    }
+  }
 }
 
 .user-menu__products-count {
