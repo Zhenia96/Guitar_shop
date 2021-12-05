@@ -11,6 +11,13 @@ const page = {
   },
 };
 
+const GuitarType = {
+  ACOUSTIC: 'Акустические гитара',
+  ELECTRIC: 'Электрогитара',
+  UKULELE: 'Укулеле',
+};
+
 export {
   page,
+  GuitarType,
 };
