@@ -1,0 +1,58 @@
+@import '../../css/mixins.scss';
+@import '../../css/variables.scss';
+
+.sorting {
+  display: flex;
+}
+
+.sorting__text ,
+.sorting__categories-container {
+  font-family: $basic-font;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.075em;
+
+  color: $basic-text-color;
+}
+
+.sorting__text {
+  margin: 0;
+}
+
+.sorting__categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 34px;
+
+
+  margin: 0 19px;
+}
+
+.sorting__priority-container {
+  display: flex;
+  column-gap: 23px;
+
+  margin: 0 0 0 auto;
+}
+
+.sorting__category,
+.sorting__priority {
+  cursor: pointer;
+}
+
+.sorting__triangle {
+  fill: rgba(0, 0, 0, 1);
+
+  &--descending {
+    transform: rotate(180deg);
+  }
+}
+
+.sorting__radio:checked + .sorting__category {
+  color: rgba(88, 87, 87, 1);
+}
+
+.sorting__radio:checked + .sorting__priority .sorting__triangle {
+  fill: rgba(108, 108, 108, 1);
+}
