@@ -19,7 +19,7 @@ const Breadcrumbs = ({ className }) => {
 
         return settings
           ? (
-            <li className='breadcrumbs__item'>
+            <li key={settings.path} className='breadcrumbs__item'>
               <Link className='breadcrumbs__link' to={settings.path}>{settings.name}</Link>
             </li>
           )
