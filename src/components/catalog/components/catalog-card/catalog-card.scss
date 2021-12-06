@@ -1,0 +1,122 @@
+@import '../../../../css/mixins.scss';
+@import '../../../../css/variables.scss';
+
+.catalog-card{
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px 20px 12px ;
+  border: 1px solid rgba(221, 218, 218, 1);
+}
+
+.catalog-card__picture {
+  order: 1;
+  margin: 0 auto;
+}
+
+.catalog-card__row {
+  display: flex;
+  justify-content: space-between;
+
+  &:nth-of-type(1) {
+    order: 3;
+    margin-top: 7px;
+  }
+
+  &:nth-of-type(2) {
+    order: 2;
+    margin-top: 8px;
+    margin-right: auto;
+  }
+
+  &:nth-of-type(3) {
+    order: 4;
+    margin-top: 13px;
+  }
+}
+
+.catalog-card__title,
+.catalog-card__price {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: $basic-text-color;
+}
+
+.catalog-card__title {
+  letter-spacing: 0.07em;
+  margin: 0;
+  max-width: 55%;
+}
+
+.catalog-card__price {
+  margin-left: 10px;
+}
+
+.catalog-card__popularity {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: rgba(159, 158, 158, 1);
+
+  margin-left: 4px;
+  transform: translateY(2px)
+}
+
+.catalog-card__button {
+  @include reset-link;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: $alternative-text-color;
+
+  width: 87px;
+  padding: 6px 9px 2px;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  &--details {
+   background-color: rgba(193, 193, 193, 1);
+   width: 89px;
+
+   &:hover,
+   &:focus {
+     background-color:rgba(88, 87, 87, 1);
+   }
+
+   &:active {
+     background-color: rgba(159, 158, 158, 1);
+   }
+  }
+
+  &--buy {
+    background-color: rgba(226, 127, 0, 1);
+
+    &::before {
+      content: '';
+      background: url('./img/icons/cart-icon.svg') no-repeat;
+      width: 11px;
+      height: 11px;
+      margin-right: 5px;
+      transform: translate(-2px,-2px);
+    }
+
+    &:hover,
+    &:focus {
+      background-color:rgba(255, 168, 57, 1);
+    }
+
+    &:active {
+      background-color: rgba(218, 139, 38, 1);
+    }
+  }
+}
