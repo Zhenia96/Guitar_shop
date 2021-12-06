@@ -1,0 +1,25 @@
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.rating__container,
+.rating__value {
+  background-size: 14px 9.5px;
+  background-repeat: repeat-x;
+}
+
+.rating__container {
+  background-image: url('./img/star.svg');
+  width: 70px;
+  height: 9.5px;
+  margin-right: 10px;
+  overflow-x: hidden;
+}
+
+.rating__value {
+  background-image: url('./img/active-star.svg');
+  width: 60%;
+  height: 100%;
+}
