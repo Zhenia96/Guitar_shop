@@ -17,7 +17,17 @@ const GuitarType = {
   UKULELE: 'Укулеле',
 };
 
+const ActionType = {
+  INIT_PRODUCTS: 'products/initProducts',
+};
+
+const NameSpace = {
+  PRODUCTS: 'review',
+};
+
 export {
   page,
   GuitarType,
+  ActionType,
+  NameSpace,
 };
