@@ -17,6 +17,32 @@ const sortProducts = (products, options) => {
   }
 };
 
+const filterProducts = (products, options) => {
+  const minPrice = options.firstPriceLimit < options.secondPriceLimit
+    ? options.firstPriceLimit
+    : options.secondPriceLimit;
+
+  const maxPrice = options.firstPriceLimit > options.secondPriceLimit
+    ? options.firstPriceLimit
+    : options.secondPriceLimit;
+
+  return products.filter(({ price, type, stringCount }) => {
+    if (options.firstPriceLimit !== null && (price < minPrice || price > maxPrice)) {
+      return false;
+    }
+    if (options.availableTypes.length && !options.availableTypes.includes(type)) {
+      return false;
+    }
+    if (options.availableStringCounts.length
+      && !options.availableStringCounts.includes(stringCount)) {
+      return false;
+    }
+
+    return true;
+  });
+};
+
 export {
   sortProducts,
+  filterProducts,
 };

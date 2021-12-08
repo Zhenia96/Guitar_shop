@@ -1,0 +1,121 @@
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.filter__title,
+.filter__subtitle {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 19px;
+  color: $basic-text-color;
+  margin: 0;
+}
+
+.filter__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-top: 0.7px solid rgba(221, 218, 218, 1);
+}
+
+.filter__subtitle {
+  display: block;
+  margin-top: 30px;
+}
+
+.filter__ruble-symbol {
+  font-size: 16px;
+}
+
+.filter__row {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 24px;
+}
+
+.filter__price-field {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  letter-spacing: 0.03em;
+  color: $basic-text-color;
+  height: 28px;
+  min-width: 84px;
+  padding: 9px;
+  border: 1px solid rgba(159, 158, 158, 1);
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow-x: scroll;
+
+  &::placeholder {
+    font-family: $basic-font;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 10px;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}
+
+.filter__checkbox {
+  position: relative;
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  color: $basic-text-color;
+  padding-left: 40px;
+  cursor: pointer;
+
+  &:first-of-type {
+    margin-top: 27px;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 18px;
+  }
+
+  &::before {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(159, 158, 158, 1);
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
+  &:active::before {
+    border-color: rgba(193, 193, 193, 1);
+  }
+
+  &:hover::before {
+    border-color: rgba(88, 87, 87, 1);
+  }
+}
+
+.filter__checkbox-field:disabled + .filter__checkbox:before  {
+  background-color: rgba(246, 243, 243, 1);
+  border-color: rgba(221, 221, 221, 1);
+}
+
+.filter__checkbox-field:checked + .filter__checkbox:before  {
+  background: url('./img/icons/check-mark-icon.svg') no-repeat 50% 50%;
+}
+
+.filter__checkbox-field:focus + .filter__checkbox:before  {
+  border-color: rgba(88, 87, 87, 1);
+}
