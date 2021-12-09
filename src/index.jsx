@@ -10,7 +10,9 @@ import { generateGuitarList } from './mocks/products/products-generator';
 import 'normalize.css';
 import './css/index.scss';
 
-const products = generateGuitarList(9);
+const PRODUCT_COUNT = 55;
+
+const products = generateGuitarList(PRODUCT_COUNT);
 
 const store = configureStore({
   reducer: rootReducer,

@@ -1,0 +1,60 @@
+@import '../../css/variables.scss';
+@import '../../css/mixins.scss';
+
+.catalog {
+  margin-top: -47px;
+  margin-bottom: 60px;
+}
+
+.catalog__title {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: $basic-text-color;
+  letter-spacing: 0.05em;
+
+  margin: 0;
+}
+
+.catalog__breadcrumbs {
+  margin-top: 20px;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: 208px 1fr;
+  gap: 30px 32px;
+
+  margin-top: 50px;
+}
+
+.catalog__filter {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.catalog__sorting {
+  grid-column: 2/3;
+  margin-right: 11px;
+}
+
+.catalog__products {
+  @include reset-list;
+
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+.catalog__pagination {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+
+  justify-self: end;
+}
+
