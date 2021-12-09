@@ -1,0 +1,51 @@
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+
+.pagination__list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.pagination__button,
+.pagination__space {
+  @include reset-link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: $basic-text-color;
+
+  min-width: 24px;
+  height: 24px;
+  padding: 2px 7px;
+  border: 1px solid rgba(159, 158, 158, 1);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.pagination__button {
+  &--active {
+    color: $alternative-text-color;
+    background-color: rgba(88, 87, 87, 1);
+  }
+
+  &--next,
+  &--prev {
+    min-width: 80px;
+    margin-left: 4px;
+  }
+}
+
+.pagination__space {
+  letter-spacing: 0.01em;
+  padding: 0;
+}

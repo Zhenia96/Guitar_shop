@@ -1,4 +1,4 @@
-import { SortingCategory, SortingPriority } from './constants';
+import { SortingCategory, SortingPriority, PAGE_CARD_LIMIT } from './constants';
 
 const sortProducts = (products, options) => {
   switch (options.category) {
@@ -42,7 +42,10 @@ const filterProducts = (products, options) => {
   });
 };
 
+const getPageCount = (products) => Math.ceil(products.length / PAGE_CARD_LIMIT);
+
 export {
   sortProducts,
   filterProducts,
+  getPageCount,
 };
