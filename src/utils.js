@@ -6,6 +6,9 @@ const addSpaceBetweenThousands = (number) => {
   return reversedNumberWithSpace.reverse().join('');
 };
 
+const getProductsCount = (products) => products.reduce((acc, item) => acc + item.count, 0);
+
 export {
   addSpaceBetweenThousands,
+  getProductsCount,
 };
