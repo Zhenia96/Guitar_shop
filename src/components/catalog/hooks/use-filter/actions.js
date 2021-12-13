@@ -30,6 +30,11 @@ const deleteStringCount = (payload) => ({
   payload,
 });
 
+const setStringCounts = (payload) => ({
+  type: FilterActionType.SET_STRING_COUNTS,
+  payload,
+});
+
 const filterAction = {
   setFirstPriceLimit,
   setSecondPriceLimit,
@@ -37,6 +42,7 @@ const filterAction = {
   deleteType,
   addStringCount,
   deleteStringCount,
+  setStringCounts,
 };
 
 export {

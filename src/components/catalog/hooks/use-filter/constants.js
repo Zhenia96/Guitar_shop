@@ -5,6 +5,7 @@ const FilterActionType = {
   DELETE_TYPE: 'filter/delete-type',
   ADD_STRING_COUNT: 'filter/add-string-count',
   DELETE_STRING_COUNT: 'filter/delete-string-count',
+  SET_STRING_COUNTS: 'filter/set-string-counts',
 };
 
 export {

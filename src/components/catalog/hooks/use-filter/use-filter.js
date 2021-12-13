@@ -44,6 +44,11 @@ const reducer = (state, action) => {
           (stringCount) => stringCount !== action.payload,
         ),
       });
+    case FilterActionType.SET_STRING_COUNTS:
+      return ({
+        ...state,
+        availableStringCounts: action.payload,
+      });
     default:
       return state;
   }

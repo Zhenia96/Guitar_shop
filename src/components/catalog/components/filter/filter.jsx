@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 import { filterAction } from '../../hooks/use-filter/actions';
 import { GuitarType } from '../../../../constants';
-import { getAvailableFilters } from './utils';
+import {
+  getAvailableFilters,
+  getStringCounts,
+  getStringCountsByTypes,
+  removeType,
+} from './utils';
 import { addSpaceBetweenThousands } from '../../../../utils';
 import { productCardType } from '../../../../type-validation';
 
@@ -77,9 +82,20 @@ const Filter = ({
   const handleTypeChange = (evt) => {
     const guitarType = evt.target.value;
 
-    return options.availableTypes.includes(guitarType)
-      ? dispatch(filterAction.deleteType(guitarType))
-      : dispatch(filterAction.addType(guitarType));
+    if (options.availableTypes.includes(guitarType)) {
+      const types = removeType(options.availableTypes, guitarType);
+      const availableStringCounts = getStringCountsByTypes(types);
+      const stringCount = getStringCounts(availableStringCounts, options.availableStringCounts);
+
+      dispatch(filterAction.deleteType(guitarType));
+      dispatch(filterAction.setStringCounts(stringCount));
+    } else {
+      const availableStringCounts = getStringCountsByTypes([...options.availableTypes, guitarType]);
+      const stringCount = getStringCounts(availableStringCounts, options.availableStringCounts);
+
+      dispatch(filterAction.addType(guitarType));
+      dispatch(filterAction.setStringCounts(stringCount));
+    }
   };
 
   const handleStringCountsChange = (evt) => {
@@ -135,9 +151,10 @@ const Filter = ({
           id='acoustic'
           type='checkbox'
           value={GuitarType.ACOUSTIC}
+          readOnly
           name='type'
-          defaultChecked={options.availableTypes.includes(GuitarType.ACOUSTIC)}
-          disabled={!availableFilters.types.has(GuitarType.ACOUSTIC)}
+          checked={options.availableTypes.includes(GuitarType.ACOUSTIC)}
+          disabled={!availableFilters.types.includes(GuitarType.ACOUSTIC)}
         />
         <label className='filter__checkbox' htmlFor='acoustic'>Акустические гитары</label>
 
@@ -146,9 +163,10 @@ const Filter = ({
           id='electric'
           type='checkbox'
           value={GuitarType.ELECTRIC}
+          readOnly
           name='type'
-          defaultChecked={options.availableTypes.includes(GuitarType.ELECTRIC)}
-          disabled={!availableFilters.types.has(GuitarType.ELECTRIC)}
+          checked={options.availableTypes.includes(GuitarType.ELECTRIC)}
+          disabled={!availableFilters.types.includes(GuitarType.ELECTRIC)}
         />
         <label className='filter__checkbox' htmlFor='electric'>Электрогитары</label>
 
@@ -157,9 +175,10 @@ const Filter = ({
           id='ukulele'
           type='checkbox'
           value={GuitarType.UKULELE}
+          readOnly
           name='type'
-          defaultChecked={options.availableTypes.includes(GuitarType.UKULELE)}
-          disabled={!availableFilters.types.has(GuitarType.UKULELE)}
+          checked={options.availableTypes.includes(GuitarType.UKULELE)}
+          disabled={!availableFilters.types.includes(GuitarType.UKULELE)}
         />
         <label className='filter__checkbox' htmlFor='ukulele'>Укулеле</label>
       </div>
@@ -171,9 +190,10 @@ const Filter = ({
           id='four-strings'
           type='checkbox'
           value={4}
+          readOnly
           name='stringCount'
-          defaultChecked={options.availableStringCounts.includes(4)}
-          disabled={!availableFilters.stringCounts.has(4)}
+          checked={options.availableStringCounts.includes(4)}
+          disabled={!availableFilters.stringCounts.includes(4)}
         />
         <label className='filter__checkbox' htmlFor='four-strings'>4</label>
 
@@ -183,8 +203,9 @@ const Filter = ({
           type='checkbox'
           value={6}
           name='stringCount'
-          defaultChecked={options.availableStringCounts.includes(6)}
-          disabled={!availableFilters.stringCounts.has(6)}
+          readOnly
+          checked={options.availableStringCounts.includes(6)}
+          disabled={!availableFilters.stringCounts.includes(6)}
         />
         <label className='filter__checkbox' htmlFor='six-strings'>6</label>
 
@@ -193,9 +214,10 @@ const Filter = ({
           id='seven-strings'
           type='checkbox'
           value={7}
+          readOnly
           name='stringCount'
-          defaultChecked={options.availableStringCounts.includes(7)}
-          disabled={!availableFilters.stringCounts.has(7)}
+          checked={options.availableStringCounts.includes(7)}
+          disabled={!availableFilters.stringCounts.includes(7)}
         />
         <label className='filter__checkbox' htmlFor='seven-strings'>7</label>
 
@@ -204,9 +226,10 @@ const Filter = ({
           id='twelve-strings'
           type='checkbox'
           value={12}
+          readOnly
           name='stringCount'
-          defaultChecked={options.availableStringCounts.includes(12)}
-          disabled={!availableFilters.stringCounts.has(12)}
+          checked={options.availableStringCounts.includes(12)}
+          disabled={!availableFilters.stringCounts.includes(12)}
         />
         <label className='filter__checkbox' htmlFor='twelve-strings'>12</label>
       </div>
