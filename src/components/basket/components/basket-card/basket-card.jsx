@@ -45,7 +45,7 @@ const BasketCard = ({ className, product, index }) => {
         <p className='basket-card__text'>{`Артикул: ${product.vendorСode}`}</p>
         <p className='basket-card__text'>{`${product.type}, ${product.stringCount} струнная`}</p>
       </div>
-      <img className='basket-card__picture' src={product.picture.small} alt='Просто космическая гитара' />
+      <img className='basket-card__picture' src={product.picture.small} alt='Просто космическая гитара' width={60} height={136} />
       <p className='basket-card__price'>
         <span className='visually-hidden'>Цена: </span>
         {`${addSpaceBetweenThousands(product.price)} ₽`}

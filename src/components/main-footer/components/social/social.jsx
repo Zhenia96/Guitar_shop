@@ -11,17 +11,17 @@ const Social = ({ className }) => (
   <ul className={`${className} social`}>
     <li>
       <a href='/#'>
-        <img src={facebookIcon} alt='Мы в фэйсбук' />
+        <img src={facebookIcon} alt='Мы в фэйсбук' width={24} height={25} />
       </a>
     </li>
     <li>
       <a href='/#'>
-        <img src={instagramIcon} alt='Мы в инстаграме' />
+        <img src={instagramIcon} alt='Мы в инстаграме' width={24} height={25} />
       </a>
     </li>
     <li>
       <a href='/#'>
-        <img src={twitterIcon} alt='Мы в твиттере' />
+        <img src={twitterIcon} alt='Мы в твиттере' width={24} height={25} />
       </a>
     </li>
   </ul>

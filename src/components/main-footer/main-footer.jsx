@@ -12,7 +12,7 @@ const MainFooter = ({ className }) => (
   <footer className={`${className} main-footer`}>
     <div className='wrapper main-footer__grid'>
       <a className='main-footer__logo' href='/#'>
-        <img src={logo} alt='Логотип Guitar shop' />
+        <img src={logo} alt='Логотип Guitar shop' width={67} height={70} />
       </a>
       <Social className='main-footer__social' />
       <Menu className='main-footer__menu' />
