@@ -1,7 +1,13 @@
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+
+  &--no-scroll {
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+  }
 }
 
 .page__footer {

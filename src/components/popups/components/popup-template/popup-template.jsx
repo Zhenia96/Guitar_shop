@@ -29,7 +29,7 @@ const PopupTemplate = ({ onClose, children }) => {
   };
 
   return (
-    <div onClick={handlePopupWrapperClick} className='popup-template popup-template--wrapper'>
+    <div onClick={handlePopupWrapperClick} className='popup-template'>
       <div className='popup-template__wrapper'>
         {children}
         <button onClick={handleButtonCloseClick} className='popup-template__close-button' type='button' aria-label='Закрыть модальное окно'>+</button>
