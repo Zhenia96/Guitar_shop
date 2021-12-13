@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import Rating from '../rating/rating';
-import { productCardType } from '../../../../type-validation';
-import { addSpaceBetweenThousands } from '../../../../utils';
-import { PopupType } from '../../../../constants';
+
 import { showPopup } from '../../../../store/action';
+import { PopupType } from '../../../../constants';
+import { addSpaceBetweenThousands } from '../../../../utils';
+import { productCardType } from '../../../../type-validation';
+
 import './catalog-card.scss';
 
 const CatalogCard = ({ className, product }) => {

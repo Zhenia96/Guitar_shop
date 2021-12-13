@@ -1,14 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import {
   incrementProductCount,
   decrementProductCount,
   showPopup,
 } from '../../../../store/action';
+import { PopupType } from '../../../../constants';
 import { addSpaceBetweenThousands } from '../../../../utils';
 import { basketProductCardType } from '../../../../type-validation';
-import { PopupType } from '../../../../constants';
+
 import './basket-card.scss';
 
 const BasketCard = ({ className, product, index }) => {

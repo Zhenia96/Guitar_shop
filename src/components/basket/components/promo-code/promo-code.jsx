@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { setDiscount, applyPromoCode } from '../../../../store/action';
 import { getPromoCode } from '../../../../store/basket/selectors';
 import { getDiscount } from './utils';
+
 import './promo-code.scss';
 
 const PromoCode = ({ className, price }) => {

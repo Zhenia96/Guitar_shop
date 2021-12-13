@@ -1,10 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { productCardType } from '../../../../type-validation';
-import { GuitarType } from '../../../../constants';
-import { addSpaceBetweenThousands } from '../../../../utils';
-import { getAvailableFilters } from './utils';
+
 import { filterAction } from '../../hooks/use-filter/actions';
+import { GuitarType } from '../../../../constants';
+import { getAvailableFilters } from './utils';
+import { addSpaceBetweenThousands } from '../../../../utils';
+import { productCardType } from '../../../../type-validation';
+
 import './filter.scss';
 
 const Filter = ({

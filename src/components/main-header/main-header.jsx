@@ -1,7 +1,10 @@
 import React from 'react';
+
 import MainMenu from './components/main-menu/main-menu';
 import UserMenu from './components/user-menu/user-menu';
+
 import LogoImage from './img/logo-black.svg';
+
 import './main-header.scss';
 
 const MainHeader = () => (

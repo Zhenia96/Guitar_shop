@@ -1,12 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import PopupTemplate from '../popup-template/popup-template';
+
 import { showPopup, addProduct, incrementProductCount } from '../../../../store/action';
 import { getPopupOptions } from '../../../../store/popups/selectors';
 import { getBasketProducts } from '../../../../store/basket/selectors';
-import { addSpaceBetweenThousands } from '../../../../utils';
 import { PopupType } from '../../../../constants';
+import { addSpaceBetweenThousands } from '../../../../utils';
+
 import './popup-add.scss';
 
 const PopupAdd = ({ onClose }) => {

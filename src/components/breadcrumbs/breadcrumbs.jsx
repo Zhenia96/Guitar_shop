@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import { getDirectoriesFromPath } from './utils';
+import PropTypes from 'prop-types';
+
 import { breadcrumbsSettings } from './constants';
+import { getDirectoriesFromPath } from './utils';
+
 import './breadcrumbs.scss';
 
 const Breadcrumbs = ({ className }) => {

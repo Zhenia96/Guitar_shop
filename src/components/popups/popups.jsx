@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import PopupSuccess from './components/popup-success/popup-success';
 import PopupAdd from './components/popup-add/popup-add';
 import PopupDelete from './components/popup-delete/popup-delete';
+
 import { getPopupType } from '../../store/popups/selectors';
 import { closePopup } from '../../store/action';
 import { PopupType } from '../../constants';

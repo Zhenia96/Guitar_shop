@@ -1,10 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import PopupTemplate from '../popup-template/popup-template';
+
 import { deleteProduct } from '../../../../store/action';
 import { getPopupOptions } from '../../../../store/popups/selectors';
 import { addSpaceBetweenThousands } from '../../../../utils';
+
 import './popup-delete.scss';
 
 const PopupDelete = ({ onClose }) => {

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { setCategory, setPriority } from '../../hooks/use-sorting/actions';
 import { SortingCategory, SortingPriority } from '../../constants';
+
 import './sorting.scss';
 
 const Sorting = ({ className, dispatch, options }) => {

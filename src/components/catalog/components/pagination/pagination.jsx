@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getPaginationOptions } from './utils';
+
 import { SPACE } from './constants';
+import { getPaginationOptions } from './utils';
+
 import './pagination.scss';
 
 const Pagination = ({

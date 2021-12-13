@@ -1,8 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import PopupTemplate from '../popup-template/popup-template';
+
 import { Path } from '../../../../constants';
+
 import './popup-success.scss';
 
 const PopupSuccess = ({ onClose }) => {

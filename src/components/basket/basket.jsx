@@ -1,11 +1,14 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { getBasketProducts, getDiscount } from '../../store/basket/selectors';
+
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import BasketCard from './components/basket-card/basket-card';
 import PromoCode from './components/promo-code/promo-code';
+
+import { getBasketProducts, getDiscount } from '../../store/basket/selectors';
 import { addSpaceBetweenThousands } from '../../utils';
 import { calculatePriceWithoutDiscount } from './utils';
+
 import './basket.scss';
 
 const Basket = () => {

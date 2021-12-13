@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import Breadcrumbs from '../breadcrumbs/breadcrumbs';
 import Sorting from './components/sorting/sorting';
 import CatalogCard from './components/catalog-card/catalog-card';
 import Filter from './components/filter/filter';
+import Pagination from './components/pagination/pagination';
+
 import useFilter from './hooks/use-filter/use-filter';
 import useSorting from './hooks/use-sorting/use-sorting';
-import Pagination from './components/pagination/pagination';
 import { getInitialProducts } from '../../store/products/selectors';
-import { sortProducts, filterProducts, getPageCount } from './utils';
 import { PAGE_CARD_LIMIT } from './constants';
+import { sortProducts, filterProducts, getPageCount } from './utils';
+
 import './catalog.scss';
 
 const Catalog = () => {
