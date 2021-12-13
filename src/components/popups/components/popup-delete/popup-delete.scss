@@ -1,0 +1,113 @@
+@import '../../../../css/mixins.scss';
+@import '../../../../css/variables.scss';
+
+.popup-delete {
+  width: 640px;
+}
+
+.popup-delete__title {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: rgba(71, 71, 71, 1);
+
+  padding: 0;
+  margin: 0;
+}
+
+.popup-delete__container {
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: 20px;
+}
+
+.popup-delete__picture {
+  transform: translateX(-3px);
+}
+
+.popup-delete__info,
+.popup-delete__button-container {
+  padding-top: 19px;
+}
+
+
+.popup-delete__info {
+   margin-left: 34px;
+}
+
+.popup-delete__button-container {
+  margin-left: auto;
+}
+
+.popup-delete__text  {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.075em;
+  color: $basic-text-color;
+
+  padding: 0;
+  margin: 0;
+
+  &--name {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  &--price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+}
+
+.popup-delete__button {
+  @include reset-link;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+
+  width: 220px;
+  min-height: 46px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+
+  &--delete {
+    background-color: rgba(226, 127, 0, 1);
+    color: $alternative-text-color;
+    padding-bottom: 5px;
+    border: none;
+  }
+
+  &--continue {
+    border: 1px solid rgba(88, 87, 87, 1);
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(88, 87, 87, 1);
+
+    margin-top: 16px;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      color: rgba(88, 87, 87, 0.5);
+      border-color: rgba(108, 108, 108, 0.5);
+    }
+  }
+}

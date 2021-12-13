@@ -1,0 +1,93 @@
+@import '../../../../css/mixins.scss';
+@import '../../../../css/variables.scss';
+
+
+.popup-add {
+  width: 640px;
+}
+
+.popup-add__title {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: rgba(71, 71, 71, 1);
+
+  padding: 0;
+  margin: 0;
+}
+
+.popup-add__container {
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: 20px;
+}
+
+.popup-add__picture {
+  transform: translateX(-3px);
+}
+
+.popup-add__info,
+.popup-add__button-container {
+  padding-top: 19px;
+}
+
+
+.popup-add__info {
+   margin-left: 34px;
+}
+
+.popup-add__button-container {
+  margin-left: auto;
+}
+
+.popup-add__text  {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.075em;
+  color: $basic-text-color;
+
+  padding: 0;
+  margin: 0;
+
+  &--name {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  &--price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+}
+
+.popup-add__button-add {
+  @include reset-link;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.08em;
+  color: $alternative-text-color;
+
+  width: 220px;
+  min-height: 46px;
+  padding: 2px 10px 5px;
+  border: none;
+  box-sizing: border-box;
+
+  background-color: rgba(226, 127, 0, 1);
+}
