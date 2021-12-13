@@ -4,8 +4,12 @@
 .catalog-card{
   display: flex;
   flex-direction: column;
-  padding: 14px 14px 20px 12px ;
+  padding: 10px 14px 20px 12px ;
   border: 1px solid rgba(221, 218, 218, 1);
+
+  &--with-small-picture {
+    padding-top: 14px;
+  }
 }
 
 .catalog-card__picture {
@@ -24,13 +28,16 @@
 
   &:nth-of-type(2) {
     order: 2;
-    margin-top: 8px;
     margin-right: auto;
   }
 
   &:nth-of-type(3) {
     order: 4;
     margin-top: 13px;
+  }
+
+  &--with-small-picture {
+    margin-top: 8px;
   }
 }
 

@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import Rating from '../rating/rating';
 
 import { showPopup } from '../../../../store/action';
-import { PopupType } from '../../../../constants';
+import { PopupType, GuitarType } from '../../../../constants';
 import { addSpaceBetweenThousands } from '../../../../utils';
+import { PictureSize } from './constant';
 import { productCardType } from '../../../../type-validation';
 
 import './catalog-card.scss';
@@ -15,6 +16,7 @@ const CatalogCard = ({ className, product }) => {
   const {
     name,
     price,
+    type,
     rating,
     popularity,
     picture,
@@ -32,7 +34,7 @@ const CatalogCard = ({ className, product }) => {
   };
 
   return (
-    <article className={`${className} catalog-card`}>
+    <article className={`${className} catalog-card ${type !== GuitarType.ELECTRIC ? 'catalog-card--with-small-picture' : ''}`}>
       <div className='catalog-card__row'>
         <h3 className='catalog-card__title'>{name}</h3>
         <span className='catalog-card__price'>
@@ -40,8 +42,14 @@ const CatalogCard = ({ className, product }) => {
           &#8381;
         </span>
       </div>
-      <img className='catalog-card__picture' src={picture.normal} alt={`Гитара ${name}`} width='68' height='190' />
-      <div className='catalog-card__row'>
+      <img
+        className='catalog-card__picture'
+        src={picture.normal}
+        alt={`Гитара ${name}`}
+        width={type === GuitarType.ELECTRIC ? PictureSize.normal.width : PictureSize.small.width}
+        height={type === GuitarType.ELECTRIC ? PictureSize.normal.height : PictureSize.small.height}
+      />
+      <div className={`catalog-card__row ${type !== GuitarType.ELECTRIC ? 'catalog-card__row--with-small-picture' : ''}`}>
         <Rating value={rating} />
         <span className='catalog-card__popularity'>{popularity}</span>
       </div>
