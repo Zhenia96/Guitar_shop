@@ -1,7 +1,7 @@
 import React from 'react';
 import MainMenu from './main-menu/main-menu';
 import UserMenu from './user-menu/user-menu';
-import LogoImage from '../../img/main-header/logo-black.svg';
+import LogoImage from './img/logo-black.svg';
 import './main-header.scss';
 
 const MainHeader = () => (

@@ -96,12 +96,12 @@
 
 .footer-menu__phone {
   &::before {
-    background: url('../../../img/main-footer/icons/phone-icon.svg') no-repeat;
+    background: url('./img/phone-icon.svg') no-repeat;
   }
 }
 
 .footer-menu__time {
   &::before {
-    background: url('../../../img/main-footer/icons/clock-icon.svg') no-repeat;
+    background: url('./img/clock-icon.svg') no-repeat;
   }
 }

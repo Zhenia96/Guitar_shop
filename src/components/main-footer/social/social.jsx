@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import facebookIcon from '../../../img/main-footer/icons/facebook-icon.svg';
-import instagramIcon from '../../../img/main-footer/icons/instagram-icon.svg';
-import twitterIcon from '../../../img/main-footer/icons/twitter-icon.svg';
+import facebookIcon from './img/facebook-icon.svg';
+import instagramIcon from './img/instagram-icon.svg';
+import twitterIcon from './img/twitter-icon.svg';
 import './social.scss';
 
 const Social = ({ className }) => (

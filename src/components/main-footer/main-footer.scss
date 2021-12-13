@@ -12,7 +12,7 @@ $bg-color: rgba(63, 63, 63, 1);
   box-sizing: border-box;
   background:
   linear-gradient(to bottom, transparent 63px, $bg-color 63px, $bg-color 69px, transparent 69px, transparent 79px, $bg-color 79px),
-  url('../../img/main-footer/footer-guitar.png') no-repeat left -65px top -6px;
+  url('./img/footer-guitar.png') no-repeat left -65px top -6px;
 }
 
 .main-footer__grid {
