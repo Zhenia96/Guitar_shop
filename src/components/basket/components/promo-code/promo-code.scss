@@ -1,0 +1,94 @@
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+
+.promo-code__title {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.09em;
+  color: $basic-text-color;
+
+  padding: 0;
+  margin: 0;
+}
+
+.promo-code__field-label {
+  display: block;
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.075em;
+  color: $basic-text-color;
+
+  margin-top: 9px;
+}
+
+.promo-code__button-container {
+  position: relative;
+  display: flex;
+  column-gap: 33px;
+
+  margin-top: 19px;
+}
+
+.promo-code__field,
+.promo-code__apply-button {
+  font-family: $basic-font;
+  font-size: 16px;
+  line-height: 15px;
+
+  text-align: center;
+  vertical-align: middle;
+
+  height: 36px;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.promo-code__field {
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  color: $basic-text-color;
+
+  width: 170px;
+  padding: 5px 10px;
+  border: 2px solid rgba(221, 218, 218, 1);
+  overflow-x: scroll;
+}
+
+.promo-code__apply-button {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: $alternative-text-color;
+
+  width: 200px;
+  padding: 5px 10px 5px 15px;
+  border: none;
+  background-color: rgba(193, 193, 193, 1);
+
+  cursor: pointer;
+}
+
+.promo-code__message {
+  position: absolute;
+  top: 100%;
+
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: rgba(212, 15, 15, 1);
+  text-align: center;
+
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+
+  &--active {
+    display: block;
+  }
+}

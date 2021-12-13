@@ -1,0 +1,98 @@
+@import '../../css/variables.scss';
+@import '../../css/mixins.scss';
+
+.basket {
+  margin-top: -23px;
+  margin-bottom: 93px;
+}
+
+.basket__title {
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: $basic-text-color;
+  letter-spacing: 0.05em;
+
+  margin: 0;
+}
+
+.basket__breadcrumbs {
+  margin-top: 20px;
+}
+
+.basket__grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px 30px;
+
+  margin-top: 27px;
+}
+
+.basket__products {
+  @include reset-list;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  margin-bottom: 20px;
+}
+
+.basket__product-container {
+  border-bottom: 1px solid rgba(221, 218, 218, 1);
+
+  &:first-child {
+    border-top: 1px solid rgba(221, 218, 218, 1);
+  }
+}
+
+.basket__promo-code {
+  grid-column: 1 / 2;
+  grid-row: 2/ 4;
+  justify-self: start;
+}
+
+.basket__total-price {
+  grid-column: 2 / 3;
+  grid-row: 2/ 3;
+  justify-self: end;
+
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  color: $basic-text-color;
+
+  padding: 0;
+  margin: 0;
+  margin-right: 4px;
+}
+
+.basket__checkout-button {
+  @include reset-link;
+
+  grid-column: 2 / 3;
+  grid-row: 3/ 4;
+  justify-self: end;
+  align-self: end;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: $alternative-text-color;
+
+  width: 220px;
+  min-height: 36px;
+  padding: 2px 10px 5px;
+  border: none;
+  box-sizing: border-box;
+
+  background-color: rgba(226, 127, 0, 1);
+}

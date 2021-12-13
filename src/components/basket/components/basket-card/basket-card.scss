@@ -1,0 +1,135 @@
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+
+.basket-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.38% 40% 16.1% 18.8% 1fr;
+
+  min-height: 163px;
+  padding: 19px 0 8px 38px;
+  box-sizing: border-box;
+}
+
+.basket-card__title,
+.basket-card__text,
+.basket-card__price {
+  padding: 0;
+  margin: 0;
+}
+
+.basket-card__title {
+  font-family: $basic-font;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $basic-text-color;
+
+  margin-bottom: 10px;
+}
+
+.basket-card__text {
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  color: $basic-text-color;
+}
+
+.basket-card__description {
+  order: 2;
+  margin-left: 62px;
+}
+
+.basket-card__picture {
+  order: 1;
+  transform: translateY(-3px);
+}
+
+.basket-card__price {
+  order: 3;
+  align-self: center;
+
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 19px;
+  letter-spacing: 0.075em;
+  color: $basic-text-color;
+  transform: translateY(-1px);
+  margin-left: auto;
+
+  &--total {
+    justify-self: end;
+    font-weight: bold;
+    transform: translate(5px, -2px);
+    margin-left: 20px;
+  }
+}
+
+.basket-card__counter {
+  order: 3;
+
+  display: flex;
+
+  margin-top: 21px;
+  margin-left: auto;
+}
+
+.basket-card__counter-button,
+.basket-card__counter-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $basic-font;
+  font-weight: normal;
+  font-size: 16px;
+  color: rgba(159, 158, 158, 1);
+  letter-spacing: 0.05em;
+
+  min-width: 28px;
+  height: 30px;
+  padding: 0 5px;
+  border: 1px solid rgba(159, 158, 158, 1);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+}
+
+.basket-card__counter-button {
+  cursor: pointer;
+}
+
+.basket-card__counter-field {
+  padding-top: 5px;
+}
+
+.basket-card__delete-button {
+  position: absolute;
+  top: 21px;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 27px;
+  line-height: 0;
+  color: rgba(159, 158, 158, 1);
+  transform: rotate(45deg);
+
+
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}

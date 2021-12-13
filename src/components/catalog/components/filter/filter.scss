@@ -107,13 +107,14 @@
   }
 }
 
-.filter__checkbox-field:disabled + .filter__checkbox:before  {
-  background-color: rgba(246, 243, 243, 1);
-  border-color: rgba(221, 221, 221, 1);
-}
-
 .filter__checkbox-field:checked + .filter__checkbox:before  {
   background: url('./img/icons/check-mark-icon.svg') no-repeat 50% 50%;
+}
+
+.filter__checkbox-field:disabled + .filter__checkbox:before  {
+  background-image: none;
+  background-color: rgba(246, 243, 243, 1);
+  border-color: rgba(221, 221, 221, 1);
 }
 
 .filter__checkbox-field:focus + .filter__checkbox:before  {

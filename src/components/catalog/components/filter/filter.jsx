@@ -214,7 +214,7 @@ const Filter = ({
 
 Filter.propTypes = {
   className: PropTypes.string,
-  products: PropTypes.arrayOf(productCardType).isRequired,
+  products: PropTypes.arrayOf(PropTypes.shape(productCardType)).isRequired,
   dispatch: PropTypes.func.isRequired,
   options: PropTypes.shape({
     firstPriceLimit: PropTypes.number,

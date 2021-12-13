@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import Rating from '../rating/rating';
 import { productCardType } from '../../../../type-validation';
 import { addSpaceBetweenThousands } from '../../../../utils';
+import { PopupType } from '../../../../constants';
+import { showPopup } from '../../../../store/action';
 import './catalog-card.scss';
 
 const CatalogCard = ({ className, product }) => {
@@ -13,6 +16,17 @@ const CatalogCard = ({ className, product }) => {
     popularity,
     picture,
   } = product;
+
+  const dispatch = useDispatch();
+
+  const handleBuyButtonClick = (evt) => {
+    evt.preventDefault();
+
+    dispatch(showPopup({
+      type: PopupType.ADD_PRODUCT,
+      options: product,
+    }));
+  };
 
   return (
     <article className={`${className} catalog-card`}>
@@ -30,7 +44,7 @@ const CatalogCard = ({ className, product }) => {
       </div>
       <div className='catalog-card__row'>
         <a className='catalog-card__button catalog-card__button--details' href='/#'>Подробнее</a>
-        <a className='catalog-card__button catalog-card__button--buy' href='/#'>Купить</a>
+        <a onClick={handleBuyButtonClick} className='catalog-card__button catalog-card__button--buy' href='/#'>Купить</a>
       </div>
     </article>
   );
@@ -38,7 +52,7 @@ const CatalogCard = ({ className, product }) => {
 
 CatalogCard.propTypes = {
   className: PropTypes.string,
-  product: productCardType.isRequired,
+  product: PropTypes.shape(productCardType).isRequired,
 };
 
 CatalogCard.defaultProps = {
