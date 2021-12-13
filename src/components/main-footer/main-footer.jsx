@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Social from './social/social';
-import Menu from './menu/menu';
+import Social from './components/social/social';
+import Menu from './components/menu/menu';
 import logo from './img/logo-white.svg';
 import './main-footer.scss';
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import MainMenu from './main-menu/main-menu';
-import UserMenu from './user-menu/user-menu';
+import MainMenu from './components/main-menu/main-menu';
+import UserMenu from './components/user-menu/user-menu';
 import LogoImage from './img/logo-black.svg';
 import './main-header.scss';
 
