@@ -11,11 +11,33 @@ import './popup-add.scss';
 
 const PopupAdd = ({ onClose }) => {
   const dispatch = useDispatch();
+
+  // ЧТОБЫ ВОСПРОИЗВЕСТИ СИТУАЦИЮ НУЖНО ДОБАВЛЯТЬ ОДИН И ТОТ ЖЕ ТОВАР ИЗ КАТАЛОГА
+
+  // basketProducts - массив товаров в корзине(Массив обьектов). Реализован с использованием Redux.
+  // Редьюсер находится в src/store/basket.
   const basketProducts = useSelector(getBasketProducts);
+  console.log('Список товаров из корзины', basketProducts);
+
+  // Опции для отрисовки попапа. В данном случае это обьект конкретной карточки.
   const product = useSelector(getPopupOptions);
+  console.log('Добавляемый продут', product);
 
   const handleAddButtonClick = () => {
-    const index = basketProducts.findIndex(({ vendorCode }) => product.vendorСode === vendorCode);
+    // Тут я ищу индекс товара в корзине по Артикулу,
+    // для того чтобы определить, есть ли уже товар с таким артикулом в
+    // корзине.
+    // Делаю это для того чтобы в случае если товар уже есть не добавлять новый, а
+    // увеличить поле "count" у этого товара на 1.
+    const index = basketProducts.findIndex((basketProduct) => {
+      console.log('Артикул товара из корзины', basketProduct.vendorСode);
+      console.log('Артикул добавляемого товара', product.vendorСode);
+      return product.vendorСode === basketProduct.vendorCode;
+    });
+
+    // Выводит -1 в случае когда в массиве есть товар с таким же Артикулом как и у
+    // добавляемого товара.
+    console.log('Индекс', index);
 
     if (index >= 0) {
       dispatch(incrementProductCount(index));
