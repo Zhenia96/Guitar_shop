@@ -13,6 +13,7 @@ const Discount = {
   GITARAHIT: 0.1,
   SUPERGITARA: 700,
   GITARA2020: 3000,
+  GITARA2020_IN_PERCENTAGES: 0.3,
 };
 
 export {

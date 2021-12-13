@@ -7,8 +7,8 @@ const calculateDiscount = (promoCode, price) => {
     case PromoCodeName.SUPERGITARA:
       return Discount.SUPERGITARA;
     case PromoCodeName.GITARA2020: {
-      return price * 0.3 < Discount.GITARA2020
-        ? price * 0.3
+      return price * Discount.GITARA2020_IN_PERCENTAGES < Discount.GITARA2020
+        ? price * Discount.GITARA2020_IN_PERCENTAGES
         : Discount.GITARA2020;
     }
     default:
