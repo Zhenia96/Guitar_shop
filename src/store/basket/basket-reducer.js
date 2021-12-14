@@ -16,8 +16,8 @@ const initialState = {
 
 const basketReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase(addProduct, (state, action) => {
-      state.products.push(action.payload);
+    .addCase(addProduct, (state, { payload }) => {
+      state.products.push(payload);
     })
     .addCase(deleteProduct, (state, { payload }) => {
       const index = state.products.findIndex((product) => product.vendorCode === payload);
