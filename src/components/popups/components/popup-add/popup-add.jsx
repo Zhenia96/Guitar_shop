@@ -18,7 +18,7 @@ const PopupAdd = ({ onClose }) => {
   const product = useSelector(getPopupOptions);
 
   const handleAddButtonClick = () => {
-    const index = basketProducts.findIndex(({ vendorCode }) => product.vendorСode === vendorCode);
+    const index = basketProducts.findIndex(({ vendorCode }) => product.vendorCode === vendorCode);
 
     if (index >= 0) {
       dispatch(incrementProductCount(index));
@@ -41,7 +41,7 @@ const PopupAdd = ({ onClose }) => {
           <img className='popup-add__picture' src={product.picture.small} alt='Очень мощьная гитара' width={63} height={142} />
           <div className='popup-add__info'>
             <p className='popup-add__text popup-add__text--name'>{`Гитара ${product.name}`}</p>
-            <p className='popup-add__text'>{`Артикул: ${product.vendorСode}`}</p>
+            <p className='popup-add__text'>{`Артикул: ${product.vendorCode}`}</p>
             <p className='popup-add__text'>{`${product.type}, ${product.stringCount} струнная`}</p>
             <p className='popup-add__text popup-add__text--price'>{`Цена: ${addSpaceBetweenThousands(product.price)} ₽`}</p>
           </div>

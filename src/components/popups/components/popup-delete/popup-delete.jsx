@@ -31,7 +31,7 @@ const PopupDelete = ({ onClose }) => {
           <img className='popup-delete__picture' src={product.picture.small} alt='Очень мощьная гитара' width={63} height={142} />
           <div className='popup-delete__info'>
             <p className='popup-delete__text popup-delete__text--name'>{`Гитара ${product.name}`}</p>
-            <p className='popup-delete__text'>{`Артикул: ${product.vendorСode}`}</p>
+            <p className='popup-delete__text'>{`Артикул: ${product.vendorCode}`}</p>
             <p className='popup-delete__text'>{`${product.type}, ${product.stringCount} струнная`}</p>
             <p className='popup-delete__text popup-delete__text--price'>{`Цена: ${addSpaceBetweenThousands(product.price)} ₽`}</p>
           </div>

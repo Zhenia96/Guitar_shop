@@ -19,7 +19,7 @@ const generateGuitar = () => {
   const price = getRandomNumber(Price.MIN, Price.MAX);
   const rating = getRandomNumber(Rating.MIN, Rating.MAX);
   const popularity = getRandomNumber(Popularity.MIN, Popularity.MAX);
-  const vendorСode = `SO${getRandomNumber(VendorCodeSize.MIN, VendorCodeSize.MAX)}`;
+  const vendorCode = `SO${getRandomNumber(VendorCodeSize.MIN, VendorCodeSize.MAX)}`;
   const picture = getPictures(type);
 
   return {
@@ -29,7 +29,7 @@ const generateGuitar = () => {
     price,
     rating,
     popularity,
-    vendorСode,
+    vendorCode,
     picture,
   };
 };

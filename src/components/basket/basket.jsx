@@ -33,7 +33,7 @@ const Basket = () => {
                     {
 
                       products.map((product, index) => (
-                        <li className='basket__product-container' key={product.vendorСode}>
+                        <li className='basket__product-container' key={product.vendorCode}>
                           <BasketCard product={product} index={index} />
                         </li>
                       ))

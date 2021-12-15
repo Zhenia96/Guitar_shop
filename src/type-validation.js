@@ -7,7 +7,7 @@ const productCardType = {
   price: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   popularity: PropTypes.number.isRequired,
-  vendorСode: PropTypes.string.isRequired,
+  vendorCode: PropTypes.string.isRequired,
   picture: PropTypes.shape({
     normal: PropTypes.string.isRequired,
     small: PropTypes.string.isRequired,

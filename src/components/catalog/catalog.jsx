@@ -51,7 +51,7 @@ const Catalog = () => {
                       shownProducts
                         .slice((currentPage - 1) * PAGE_CARD_LIMIT, currentPage * PAGE_CARD_LIMIT)
                         .map((product) => (
-                          <li key={product.vendorСode}>
+                          <li key={product.vendorCode}>
                             <CatalogCard product={product} />
                           </li>
                         ))
