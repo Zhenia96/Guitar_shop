@@ -23,8 +23,8 @@ const Filter = ({
     [products, options],
   );
   const [priceLimit, setPriceLimit] = useState({
-    first: '',
-    second: '',
+    minPrice: '',
+    maxPrice: '',
   });
 
   const handleFirstPriceLimitInput = (evt) => {
@@ -32,7 +32,7 @@ const Filter = ({
     if (price >= 0 && price <= availableFilters.maxPrice) {
       setPriceLimit({
         ...priceLimit,
-        first: price,
+        minPrice: price,
       });
     }
   };
@@ -42,41 +42,53 @@ const Filter = ({
     if (price >= 0 && price <= availableFilters.maxPrice) {
       setPriceLimit({
         ...priceLimit,
-        second: price,
+        maxPrice: price,
       });
     }
   };
 
   const handleFirstPriceLimitBlur = () => {
-    let price = priceLimit.first;
+    let { minPrice, maxPrice } = priceLimit;
+    maxPrice = maxPrice || availableFilters.maxPrice;
 
-    if (price < availableFilters.minPrice) {
-      price = availableFilters.minPrice;
+    if (minPrice < availableFilters.minPrice) {
+      minPrice = availableFilters.minPrice;
     }
-    if (price !== priceLimit.first) {
-      setPriceLimit({
-        ...priceLimit,
-        first: price,
-      });
+
+    if (minPrice > maxPrice) {
+      maxPrice = minPrice;
+      minPrice = priceLimit.maxPrice;
     }
-    dispatch(filterAction.setFirstPriceLimit(price));
-    dispatch(filterAction.setSecondPriceLimit(priceLimit.second || availableFilters.maxPrice));
+
+    setPriceLimit({
+      maxPrice,
+      minPrice,
+    });
+
+    dispatch(filterAction.setFirstPriceLimit(minPrice));
+    dispatch(filterAction.setSecondPriceLimit(maxPrice || availableFilters.maxPrice));
   };
 
   const handleSecondPriceLimitBlur = () => {
-    let price = priceLimit.second;
+    let { minPrice, maxPrice } = priceLimit;
+    minPrice = minPrice || availableFilters.minPrice;
 
-    if (price < availableFilters.minPrice) {
-      price = availableFilters.maxPrice;
+    if (maxPrice < availableFilters.minPrice) {
+      maxPrice = availableFilters.maxPrice;
     }
-    if (price !== priceLimit.second) {
-      setPriceLimit({
-        ...priceLimit,
-        second: price,
-      });
+
+    if (maxPrice < minPrice) {
+      minPrice = maxPrice;
+      maxPrice = priceLimit.minPrice;
     }
-    dispatch(filterAction.setFirstPriceLimit(priceLimit.first || availableFilters.minPrice));
-    dispatch(filterAction.setSecondPriceLimit(price));
+
+    setPriceLimit({
+      maxPrice,
+      minPrice,
+    });
+
+    dispatch(filterAction.setFirstPriceLimit(minPrice || availableFilters.minPrice));
+    dispatch(filterAction.setSecondPriceLimit(maxPrice));
   };
 
   const handleTypeChange = (evt) => {
@@ -124,7 +136,7 @@ const Filter = ({
             className='filter__price-field'
             id='first-price-limit'
             type='text'
-            value={priceLimit.first}
+            value={priceLimit.minPrice}
             name='firstPriceLimit'
             placeholder={addSpaceBetweenThousands(availableFilters.minPrice)}
           />
@@ -136,7 +148,7 @@ const Filter = ({
             className='filter__price-field'
             id='second-price-limit'
             type='text'
-            value={priceLimit.second}
+            value={priceLimit.maxPrice}
             name='secondPriceLimit'
             placeholder={addSpaceBetweenThousands(availableFilters.maxPrice)}
           />
