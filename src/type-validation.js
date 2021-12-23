@@ -12,6 +12,7 @@ const productCardType = {
     normal: PropTypes.string.isRequired,
     small: PropTypes.string.isRequired,
   }).isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 const basketProductCardType = {
